@@ -1,7 +1,7 @@
 # Markdown
 ***
-#### Github를 잘 활용하는 개발자가 되려면 Readme.md의 활용은 기본중의 기본이라 생각했다. 🌟
-잘 활용할 수 있는 문법들을 모아놓고 익숙해질때까지 이 Readme.md를 들락날락하고자한다.
+#### Github를 잘 활용하는 개발자가 되려면 Readme.md의 활용은 기본중의 기본 🌟
+잘 활용할 수 있는 문법들을 모아놓고 익숙해질때까지 이 Readme.md를 *들락날락*하고자한다.
 ***
 일반 텍스트 기반의 경량 마크업 언어.
 HTML, RTF 등 서식 문서로 쉽게 변환되기 때문에 응용 소프트웨어와 함께 배포되는
@@ -50,3 +50,12 @@ printf(%s,"presenting C");
 val = 10;
 print("Hello, Python!");
 ```
+
+#### 링크
+
+- 인라인 링크 : [구글](https://www.google.com"구글")
+- URL 링크 : <http://www.google.co.kr>
+- 참조 링크 : PRESS [Google][1]
+Write anything about dev.
+[1]:http://www.google.com/"구글"
+

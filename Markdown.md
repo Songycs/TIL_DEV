@@ -55,7 +55,12 @@ print("Hello, Python!");
 
 - 인라인 링크 : [구글](https://www.google.com"구글")
 - URL 링크 : <http://www.google.co.kr>
-- 참조 링크 :
-검색엔진은 [Google][1] 이 있다.
-(…본문…)
-[1]: http://google.com/ “구글
+- 참조 링크 : 추가하기
+- internal 링크 : [Link](#id)
+
+#### 표
+
+
+#### 이미지
+
+!(Developer)(https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EA%25B0%259C%25EB%25B0%259C%25EC%259E%2590&psig=AOvVaw3FF7P6jvvKD8nnwxEIowWJ&ust=1628520866476000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLCk-ZHXofICFQAAAAAdAAAAABAD)

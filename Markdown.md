@@ -63,4 +63,4 @@ print("Hello, Python!");
 
 #### 이미지
 
-!(Developer)(https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EA%25B0%259C%25EB%25B0%259C%25EC%259E%2590&psig=AOvVaw3FF7P6jvvKD8nnwxEIowWJ&ust=1628520866476000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLCk-ZHXofICFQAAAAAdAAAAABAD)
+`!(Developer)(https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EA%25B0%259C%25EB%25B0%259C%25EC%259E%2590&psig=AOvVaw3FF7P6jvvKD8nnwxEIowWJ&ust=1628520866476000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLCk-ZHXofICFQAAAAAdAAAAABAD)`

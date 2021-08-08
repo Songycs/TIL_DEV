@@ -55,7 +55,7 @@ print("Hello, Python!");
 
 - 인라인 링크 : [구글](https://www.google.com"구글")
 - URL 링크 : <http://www.google.co.kr>
-- 참조 링크 : PRESS [Google][1]
-Write anything about dev.
-[1]:http://www.google.com/"구글"
-
+- 참조 링크 :
+검색엔진은 [Google][1] 이 있다.
+(…본문…)
+[1]: http://google.com/ “구글

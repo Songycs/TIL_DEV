@@ -19,7 +19,7 @@
  
  - 주의 : 익스플로러 미지원
 
-----------------------------F
+----------------------------
  **Javascsript Web Api**
  
  - [출처링크,노마드코더](https://www.youtube.com/watch?v=Vatd-V0pLXo)

@@ -23,17 +23,17 @@
  **Javascsript Web Api**
  
  - [출처링크,노마드코더](https://www.youtube.com/watch?v=Vatd-V0pLXo)
-
- - Bluetooth API
- - Push API
- - Contact Picker API
- - Shape detection API
- - Sensor API
- - WebVR API
- - Vibration API
- - Clipboard API
- - WebUSB API
- - File System Access api
+ - EX
+   - Bluetooth API
+   - Push API
+   - Contact Picker API
+   - Shape detection API
+   - Sensor API
+   - WebVR API
+   - Vibration API
+   - Clipboard API
+   - WebUSB API
+   - File System Access api
  
  
  - 주의 

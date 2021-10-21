@@ -47,15 +47,18 @@
           border-radius: 5px;
       }
     ```
-    
+***
+
 #### 타입
 
   - Inline
   - Embedded
   - External
 
-#### 전처리기 
-  - 종류:
+***
+
+#### 전후처리기
+  - ``Pre-processors``:
     -  Sass
     -  Less
     -  Stylus
@@ -66,11 +69,17 @@
     - ``-moz-``: 파이어폭스
     - ``-o-``: 오페라(구)
     - ``-ms``: IE, Edge
+   - ``Post-processors``:
+    - PostCSS
+    - Autoprefixer
+   
+#### Shorthand Properties
 
-#### 
+  - padding, border, background etc
 
+***
 
-#### Better when
+#### Better when 
 
  - Inline 지양 ( 유지보수에 불리 ) 
  - 내용과 디자인 분리
@@ -78,7 +87,11 @@
  - naming 통일 요망
  - 항상 불필요한 코드/스타일시트 최적화 
  - framework 사용시 사용하지않는 selector 제거
+ - CSS 대신 Markup 사용하는 법 배우기
+ - media 쿼리 사용시 모바일부터( 작은화면 -> 큰화면이 유리 ) 
+ - 번들크기 줄이기( ex) webpack의 css-loader 모듈 )
 
+***
 
 #### Reference
  -[Erwinousy blog](https://erwinousy.medium.com/css-%EA%B0%9C%EC%84%A0%EC%9D%84-%EC%9C%84%ED%95%9C-10%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-9923b106661c)

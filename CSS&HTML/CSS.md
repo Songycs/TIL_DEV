@@ -13,9 +13,9 @@
       .block__element { ... }
       .block--modifier { ... }
     ```
-    -``.blobk``: block은 컴포넌트 의미 ( 독립적 의미 가짐 )
-    -``.block_element``: block의 일부, 독립의미 x, block과 함께 사용
-    -``.block-modifier``: block과 element의 속성, element 모양 동작 상태 변경 가능
+    - ``.blobk``: block은 컴포넌트 의미 ( 독립적 의미 가짐 )
+    - ``.block_element``: block의 일부, 독립의미 x, block과 함께 사용
+    - ``.block-modifier``: block과 element의 속성, element 모양 동작 상태 변경 가능
     
   - ITCSS( Inverted Triangle Css )
   ![image](https://user-images.githubusercontent.com/15559593/138219295-e925a3bc-b676-4f83-94f0-233dae0aabf6.png)

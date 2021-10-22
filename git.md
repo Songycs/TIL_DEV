@@ -33,3 +33,7 @@ About git
 ### [rejected!]
  - master -> master (non-fast-forward)
  (.gitignore 파일 또는 README.md 문제, push 대상에 +를 붙인다, git push origin +master)
+
+ - error: src refspec master does not match any
+    - git에서 pull없이 push할 경우 기존 내용이 삭제되는등의 문제가 생길 수 있음을 방지하기위함
+    - branch명 때문일 수도(ex) main)

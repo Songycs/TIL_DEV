@@ -102,7 +102,7 @@
 				2 : 'B'
 			}
 			user.age = 10;
-			```
+		```
 
 		- ``inferface function``
 
@@ -178,88 +178,88 @@
 
   - ``Functions``
 
-```ts
-		function add(num1: number, num2: number): void{
-			console.log(num1+num2);
-		}
+	```ts
+			function add(num1: number, num2: number): void{
+				console.log(num1+num2);
+			}
 
-		function isAdult(age:number): boolean{
-			return age>19;
-		}
+			function isAdult(age:number): boolean{
+				return age>19;
+			}
 
-		//name이 없을때를 대비한 코드  '?' 사용에 유의
-		function hello(name?:string){
-			return `Hello, ${name||"world"}`;
-		}
-		const result = hello();
-		const result2 = hello("song");
+			//name이 없을때를 대비한 코드  '?' 사용에 유의
+			function hello(name?:string){
+				return `Hello, ${name||"world"}`;
+			}
+			const result = hello();
+			const result2 = hello("song");
 
-		//cf) default name function(js syntax)
-		function hello2(name = "song"){
-			return `Hello, ${name}`;
-		}
-
-		// 선택적 매개변수는 필수 매개변수 앞에 있어야함, ?가 먼저오면 에러
-		function hello3(name:string, age?:number):string{
-			if(age!==undefined){
-				return `Hello, ${name}. You are ${age}.`;
-			}else{
+			//cf) default name function(js syntax)
+			function hello2(name = "song"){
 				return `Hello, ${name}`;
 			}
-		}
-		//cf) 선택을 앞에 두는 경우, 단 부를떄 undefined로 불러야함
-		function hello4(age: number | undefined, name:string): string {}
-		const hello4Result = hello4(undefined, "song")
 
-		// "..."를 활용하여 나머지 매개변수를 배열로 나타낼수있게함
-		function add(...nums:number[]){
-			return nums.reduc((result,num)=>result+num,0)
-		}
-		add(1,2,3,4,5,6,7,8,9,10); //55
+			// 선택적 매개변수는 필수 매개변수 앞에 있어야함, ?가 먼저오면 에러
+			function hello3(name:string, age?:number):string{
+				if(age!==undefined){
+					return `Hello, ${name}. You are ${age}.`;
+				}else{
+					return `Hello, ${name}`;
+				}
+			}
+			//cf) 선택을 앞에 두는 경우, 단 부를떄 undefined로 불러야함
+			function hello4(age: number | undefined, name:string): string {}
+			const hello4Result = hello4(undefined, "song")
 
-```
-		- ``This``
+			// "..."를 활용하여 나머지 매개변수를 배열로 나타낼수있게함
+			function add(...nums:number[]){
+				return nums.reduc((result,num)=>result+num,0)
+			}
+			add(1,2,3,4,5,6,7,8,9,10); //55
+
+	```
+  - ``This``
 			- bind 개념 
-```ts
+	```ts
 
-			interface User{
-				name: string;
-			}
-			
-			const Song: User = {name:'Song'}
-
-			function showName(this:User, age:number, gender:'male'|'female'){
-				console.log(this.name,age,gender)
-			}
-			const a = showName.bind(Song)
-			a(29,'male')
-			
-```
-		- ``Overload``
-			- 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
-
-```ts
 				interface User{
 					name: string;
-					age: nmber;
 				}
+				
+				const Song: User = {name:'Song'}
 
-				function join(name:string, age:string): string;
-				function join(name:string, age:number): User;
-				function join(name:string, age:number|string): User | String{
-					if (typeof age === "number"){
-						return {
-							name,
-							age,
-						};
-					} else{
-						return "write age in number";
+				function showName(this:User, age:number, gender:'male'|'female'){
+					console.log(this.name,age,gender)
+				}
+				const a = showName.bind(Song)
+				a(29,'male')
+				
+	```
+  - ``Overload``
+	  - 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
+
+	```ts
+					interface User{
+						name: string;
+						age: nmber;
 					}
-				}
 
-				const song: User = join("Song",29);
-				const ssong: string = join("Ssong","29");
- ```
+					function join(name:string, age:string): string;
+					function join(name:string, age:number): User;
+					function join(name:string, age:number|string): User | String{
+						if (typeof age === "number"){
+							return {
+								name,
+								age,
+							};
+						} else{
+							return "write age in number";
+						}
+					}
+
+					const song: User = join("Song",29);
+					const ssong: string = join("Ssong","29");
+	```
 
 ---------------------------------------------------
   - ``Generic``

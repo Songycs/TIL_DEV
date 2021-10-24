@@ -104,7 +104,7 @@
 			user.age = 10;
 	  ```
 
-		- ``inferface function``
+    - ``inferface function``
 
 	  ```ts
 			interface Add{
@@ -124,7 +124,7 @@
 			}
 	  ```
 
-		- ***``interface class``***
+    - ***``interface class``***
 
     ```ts
 			interface Car{

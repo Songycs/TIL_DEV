@@ -102,7 +102,7 @@
 				2 : 'B'
 			}
 			user.age = 10;
-		```
+	  ```
 
 		- ``inferface function``
 

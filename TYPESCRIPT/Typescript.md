@@ -74,7 +74,8 @@
 
   - ``Interface``
 		- property를 정의해서 객체로 표현하고자할때 활용
-			```ts
+
+	  ```ts
 			type Score = 'A' | 'B' | 'C' | 'F'
 			interface User{
 				name : string;
@@ -104,7 +105,8 @@
 			```
 
 		- ``inferface function``
-			```ts
+
+	  ```ts
 			interface Add{
 				(num1:number, num2:number): number;
 			}
@@ -120,10 +122,11 @@
 			const a:IsAdult = (age) =>{
 				return age > 19;
 			}
-			```
+	  ```
 
 		- ***``interface class``***
-			```ts
+
+    ```ts
 			interface Car{
 				color: string;
 				wheels: number;
@@ -170,10 +173,12 @@
 				price: number;
 			}
 
-			```
+    ```
 ---------------------------------------------------
-	- ``Functions``
-		```ts
+
+  - ``Functions``
+
+```ts
 		function add(num1: number, num2: number): void{
 			console.log(num1+num2);
 		}
@@ -212,10 +217,10 @@
 		}
 		add(1,2,3,4,5,6,7,8,9,10); //55
 
-		```
+```
 		- ``This``
 			- bind 개념 
-			```ts
+```ts
 
 			interface User{
 				name: string;
@@ -229,10 +234,11 @@
 			const a = showName.bind(Song)
 			a(29,'male')
 			
-			```
+```
 		- ``Overload``
 			- 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
-			```ts
+
+```ts
 				interface User{
 					name: string;
 					age: nmber;
@@ -253,7 +259,7 @@
 
 				const song: User = join("Song",29);
 				const ssong: string = join("Ssong","29");
-			```
+ ```
 
 ---------------------------------------------------
   - ``Generic``

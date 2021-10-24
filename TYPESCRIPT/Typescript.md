@@ -9,13 +9,13 @@
 
 #### Concept
 	
-	- static
+   - static
 
 ***
    
 #### Contents
 
-	- ``Types``
+   - ``Types``
 	```ts
 		let age:number = 30;
 		let isAdult:boolean = true;

@@ -27,49 +27,116 @@
 #### Contents
 
   - ``Types``
+		```ts
+		let age:number = 30;
+		let isAdult:boolean = true;
+		let a:number[] = [1,2,3];
+		let a2:Array<number> = [1,2,3]
+				
+		let week1:string[] = ['mon','tue','wed']
+		let week2:Array<string> = ['mon','tue','wed']
 
-	```ts
-	let age:number = 30;
-	let isAdult:boolean = true;
-	let a:number[] = [1,2,3];
-	let a2:Array<number> = [1,2,3]
-			
-	let week1:string[] = ['mon','tue','wed']
-	let week2:Array<string> = ['mon','tue','wed']
+		//tuple, index별로 다른 type가능
+		let b:[string,number];
+		// b[0].toLowerCase() -> o, b[1] -> x 
 
-	//tuple, index별로 다른 type가능
-	let b:[string,number];
-	// b[0].toLowerCase() -> o, b[1] -> x 
-
-	// void, never
-	function sayHello():void{
-		console.log("gg")
-	}
-	function showError():never{
-		throw new Error();
-	}
-	function infLoop():never{
-		while(true){
-			//do..
+		// void, never
+		function sayHello():void{
+			console.log("gg")
 		}
-	}
+		function showError():never{
+			throw new Error();
+		}
+		function infLoop():never{
+			while(true){
+				//do..
+			}
+		}
 
-	//enum , js에 없음, 유사타입 묶음, 공통점이 있을때 활용
-	enum Os{
-		Window,
-		Ios,
-		Android
-		// 자동으로 0 부터 ++ 할당, 이전 변수값++로 할당
-		// ex) Ios=10 -> Android = 11 
-	}
+		//enum , js에 없음, 유사타입 묶음, 공통점이 있을때 활용
+		enum Os{
+			Window,
+			Ios,
+			Android
+			// 자동으로 0 부터 ++ 할당, 이전 변수값++로 할당
+			// ex) Ios=10 -> Android = 11 
+		}
 
-	let myOs:Os;
-	myOs = Os.Window
+		let myOs:Os;
+		myOs = Os.Window
 
-	// null, undefined
-	let c:null = null;
-	let d:undefined = undefined
-	```
+		// null, undefined
+		let c:null = null;
+		let d:undefined = undefined
+		```
+
+  - ``Literal Types``
+	  ```ts
+	  	const userName1 = "Song"; // string literal
+	  	let userName2: string | number = "Tom";
+	  	//userName = 3 -> ok!
+	  	type Job = "police" | "developer" | "teacher";
+
+	  	interface User{
+	  		name : string;
+	  		job : Job;
+	  	}
+
+	  	const user: User = {
+	  		name: "Song";
+	  		//job: "student" -> error!!
+	  		job: "developer";
+	  	}
+	  ```
+
+  - ``Union Types(유니온)``
+	  ```ts
+	  	interface Car{
+	  		name: "car";
+	  		color: string;
+	  		start(): void;
+	  	}
+	  	interface Mobile{
+	  		name: "mobile";
+	  		color: string;
+	  		call(): void;
+	  	}
+	  	//식별 가능한 유니온 타입, 동일 속성을 다르게해서 구분 가능한 유니온타입
+	  	function getGift(gift: Car | Mobile){
+	  		console.log(gift.color); // ok, both interface has color
+	  		gift.start() // error, only car has start()
+	  		
+	  		//조건이 많으면 switch가 나음
+	  		if(gift.name === " car"){
+	  			gift.start()
+	  		} else{
+	  			gift.call();
+	  		}
+	  	}
+	  ```
+  - ``Intersection Types(교차)``
+	  ```ts
+	  	interface Car{
+	  		nmae: string;
+	  		start():void;
+	  	}
+	  	interface Toy{
+	  		name:string;
+	  		color:string;
+	  		price: number;
+	  	}
+	  	//모든속성 확인 필요
+	  	const toyCar: Toy & Car = {
+	  		name: "타요",
+	  		start() {},
+	  		color: "blue",
+	  		price:1000
+	  	}
+	  
+	  
+
+	  ```
+
 ---------------------------------------------------	
 
   - ``Interface``
@@ -104,7 +171,7 @@
 			user.age = 10;
 	  ```
 
-    - ``inferface function``
+		- ``inferface function``
 
 	  ```ts
 			interface Add{
@@ -124,7 +191,7 @@
 			}
 	  ```
 
-    - ***``interface class``***
+		- ***``interface class``***
 
     ```ts
 			interface Car{
@@ -219,52 +286,52 @@
 
 	```
   - ``This``
-			- bind 개념 
-	```ts
+		- bind 개념 
+		```ts
 
-				interface User{
-					name: string;
-				}
-				
-				const Song: User = {name:'Song'}
-
-				function showName(this:User, age:number, gender:'male'|'female'){
-					console.log(this.name,age,gender)
-				}
-				const a = showName.bind(Song)
-				a(29,'male')
-				
-	```
-  - ``Overload``
-	  - 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
-
-	```ts
 					interface User{
 						name: string;
-						age: nmber;
 					}
+					
+					const Song: User = {name:'Song'}
 
-					function join(name:string, age:string): string;
-					function join(name:string, age:number): User;
-					function join(name:string, age:number|string): User | String{
-						if (typeof age === "number"){
-							return {
-								name,
-								age,
-							};
-						} else{
-							return "write age in number";
+					function showName(this:User, age:number, gender:'male'|'female'){
+						console.log(this.name,age,gender)
+					}
+					const a = showName.bind(Song)
+					a(29,'male')
+					
+		```
+  - ``Overload``
+		- 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
+		```ts
+						interface User{
+							name: string;
+							age: nmber;
 						}
-					}
 
-					const song: User = join("Song",29);
-					const ssong: string = join("Ssong","29");
-	```
+						function join(name:string, age:string): string;
+						function join(name:string, age:number): User;
+						function join(name:string, age:number|string): User | String{
+							if (typeof age === "number"){
+								return {
+									name,
+									age,
+								};
+							} else{
+								return "write age in number";
+							}
+						}
+
+						const song: User = join("Song",29);
+						const ssong: string = join("Ssong","29");
+		```
 
 ---------------------------------------------------
   - ``Generic``
 ---------------------------------------------------
-  - ``Class``
+	- ``Class``
+		
 
 ***
 

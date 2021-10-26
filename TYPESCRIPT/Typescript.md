@@ -330,10 +330,142 @@
 
 ---------------------------------------------------
   - ``Generic``
----------------------------------------------------
-	- ``Class``
-		
+  ```ts
+  //<T>를 type parameter라 함
+  function getSize<T>(arr:T[]): number{
+  	return arr.length;
+  }
+  const arr1 = [1,2,3];
+  getSize<number>(arr1);
 
+  const arr2 = ["a","b","c"]
+  getSize<string>(arr2);
+  
+  // interface에서 활용
+  interface Mobile<T>{
+  	name: string;
+  	price: number;
+  	option: T;
+  }
+  //const m1: Mobile<{color:string, coupon boolean}> <- 이처럼 활용 가능
+  const m1: Mobile<object>={
+  	name : "s21",
+  	price:1000,
+  	option:{
+  		color: "red";
+  		coupon: false;
+  	}
+  }
+  const m2: Mobile<string> ={
+  	name : "s21",
+  	price: 1000,
+  	option:"good"
+  }
+
+
+  interface User{
+  	name:string;
+  	age:number;
+  }
+  interface Car{
+  	name:boolean;
+  	color:string;
+  }
+  interface Book{
+  	price:number;
+  }
+
+  const user: User = { name:"Song", age:29};
+  const car: Car = { name:"bmw",color:"red"}
+  const book: Book = {price:3000};
+
+  //T타입을 받는데, name이 string인 객체를 확장한 형태일 것이다.
+  function showName<T extends {name:string}>(data:T):string{
+  	return data.name;
+  }
+  showName(user); //ok
+  showName(car); //error, no string 
+  showName(book); //error, no name
+
+  ```
+---------------------------------------------------
+  - ``Class(ES6)``
+	```ts
+		class Car{
+		//멤버 변수는 미리 선언해줄 것 -> 접근자, readonly활용시 미리 선언 없이 가능
+			color:string;
+			constructor(color: string){
+				this.color = color
+			}
+		}
+	```
+  	-	``Access modifier (접근 제한자)`` : public, private, protected
+  	```ts
+  	class Car{
+  		/*
+			public : 자식 클래스, 클래스 인스턴스 모두 접근 가능
+			protected : 자식 클래스에서(만) 접근 가능
+			private : 해당 클래스 내부에서 접근 가능
+  		*/
+  		//private 명시 혹은 #name
+  		private name: string ="car";
+  		color: string;
+  		constructor(color: string){
+  			this.color = color;
+  		}
+  		start(){
+  			console.log("start");
+  			console.log(#name);
+  		}
+  	}  
+
+  	```
+  	- ``readonly``
+  	```ts
+  	//readonly : 읽기전용, 수정 불가, constructor에 지정해주어야 new로 값 넣을 수 있음
+  	class Car{
+  		readonly name: string = "car";
+  		color : string;
+  		constructor(color: string, name){
+  			this.color = color;
+  			this.name = name;
+  		}
+  	}
+  	
+  	class Bmw extends Car{
+  		constructor(color: string, name){
+  			super(color,name)''
+  		}
+  	}
+
+  	const tmp = new Bmw("black","zzz")
+  	```
+  	- ``static``
+  		- this말고 클래스명에 .으로 접근
+
+  	- ``추상 class``
+  	```ts
+  	// 같은 추상 class로 만들어진 많은 클래스들이 같은 이름의 메소드를 가질 순 있지만 다른 기능을 할 것
+  	abstract class Car{
+  		color: string;
+  		constructor(color:string){
+  			this.color = color;
+  		}
+  		start(){
+  			console.log("start");
+  		}
+  		abstract doSomething(): void;
+  	}
+  	
+  	class Bmw extends Car{
+  		constructor(color: string){
+  			super(color)
+  		}
+  		doSomething(){
+  			alert("ok");
+  		}
+  	}
+  	```
 ***
 
 #### Memo & Keyword

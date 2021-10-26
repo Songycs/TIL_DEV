@@ -189,7 +189,7 @@
 
   // 5. Record<K,T> KEY, TYPE
   type Grade = "1" | "2" | "3" | "4";
-  type Score = "A" | "B" | "C" | "D" | "F;
+  type Score = "A" | "B" | "C" | "D" | "F";
   //Score가 type
   const score: Record<Grade, Score> ={
   	1:"A",

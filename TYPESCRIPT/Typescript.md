@@ -27,7 +27,8 @@
 #### Contents
 
   - ``Types``
-		```ts
+
+	```ts
 		let age:number = 30;
 		let isAdult:boolean = true;
 		let a:number[] = [1,2,3];
@@ -68,7 +69,7 @@
 		// null, undefined
 		let c:null = null;
 		let d:undefined = undefined
-		```
+	```
 
   - ``Literal Types``
 	  ```ts
@@ -140,7 +141,7 @@
 ---------------------------------------------------	
 
   - ``Interface``
-		- property를 정의해서 객체로 표현하고자할때 활용
+  	- property를 정의해서 객체로 표현하고자할때 활용
 
 	  ```ts
 			type Score = 'A' | 'B' | 'C' | 'F'
@@ -171,7 +172,7 @@
 			user.age = 10;
 	  ```
 
-		- ``inferface function``
+  	- ``inferface function``
 
 	  ```ts
 			interface Add{
@@ -191,7 +192,7 @@
 			}
 	  ```
 
-		- ***``interface class``***
+  	- ***``interface class``***
 
     ```ts
 			interface Car{
@@ -286,7 +287,7 @@
 
 	```
   - ``This``
-		- bind 개념 
+  	- bind 개념 
 		```ts
 
 					interface User{
@@ -303,7 +304,7 @@
 					
 		```
   - ``Overload``
-		- 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
+  	- 동일한 함수지만 매개변수의 타입에 따라 다르게 동작해야할때 활용
 		```ts
 						interface User{
 							name: string;

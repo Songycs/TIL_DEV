@@ -134,9 +134,119 @@
 	  		price:1000
 	  	}
 	  
-	  
-
 	  ```
+  
+  - ``Utility Types``
+  ```ts
+  //1. keyof -> interface의 키값들을 union 형태로 받을 수 있음
+  interface User{
+  	id: number;
+  	name: string;
+  	age: number;
+  	gender: "m" | "f";
+  }
+
+  type UserKey = keyof User; // 'id' | 'name' | 'age' | 'gender'
+  
+  // 2. Partial<T> -> property를 모두 option으로 만들어줌
+
+  interface User{
+  	id: number;
+  	name: string;
+  	age: number;
+  	gender: "m" | "f";
+  }
+  let admin: Partial<User> = {
+  	id:1,
+  	name: "Song",
+  	job: "dd" // error! 없는거임 	
+  }
+
+  // 3. Required<T> -> 모든 property를 필수로 
+  interface User{
+  	id: number;
+  	name: string;
+  	age?: number;
+  }
+
+  //error! age가 없음
+  let admin: Required<User> = {
+  	id: 1,
+  	name: "Song"
+  }
+
+  // 4. readonly -> 읽기전용으로 바꿈
+    interface User{
+  	id: number;
+  	name: string;
+  	age?: number;
+  } 
+  let admin: Readonly<User> ={
+  	id:1,
+  	name:"song"
+  }
+  admin.id = 4; //error, readonly
+
+  // 5. Record<K,T> KEY, TYPE
+  type Grade = "1" | "2" | "3" | "4";
+  type Score = "A" | "B" | "C" | "D" | "F;
+  //Score가 type
+  const score: Record<Grade, Score> ={
+  	1:"A",
+  	2:"B",
+  	3:"C",
+  	4:"D"
+  };
+  // Record 활용 예시
+  interface User{
+  	id: number;
+  	name: string;
+  	age: number;
+  }
+
+  function isValid(user:User){
+  	const result: Record<keyof User, boolean> = {
+  		id : user.id > 0,
+  		name : user.name !=="",
+  		age: user.age > 0,
+  	};
+  	return result;
+  }
+
+  // 6. Pick<T,k> -> 일부만 가져와서 활용
+
+  interface User{
+  	id: number;
+  	name: string;
+  	age: number;
+  	gender: "M" | "W";
+  }
+  const admin: Pick<User, "id" | "name"> = {
+  	id: 0,
+  	name: "Song"
+  };
+
+  // 7. Omit<T,K> -> 특정 PROPERTY 생략하고 활용가능
+  interface User{
+  	id: number;
+  	name: string;
+  	age: number;
+  	gender: "M" | "W";
+  }
+  //위의 pick과 같은 기능
+  const admin: Omit<User, "age" | "gender"> = {
+  	id: 0,
+  	name: "Song"
+  };
+
+  // 8. Exclude<T1,T2> -> T1에서 T2타입을 제거함, cf)omit은 property
+  type T1 = string | number | boolean;
+  type T2 = Exclude<T1, number | string>; //boolean만 남음
+  
+  // 9. NonNullable<Type> // null과 undefined를 제거함
+  type T1 = string | null | undefined | void;
+  type T2 = NonNullable<T1>; //string과 void만 남음
+  ```
 
 ---------------------------------------------------	
 

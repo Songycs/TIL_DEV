@@ -31,7 +31,10 @@
 
 
 
-#### ex
+#### commands
+![image](https://user-images.githubusercontent.com/15559593/139336783-db648160-678a-49ff-999a-028e5bff113e.png)
+![image](https://user-images.githubusercontent.com/15559593/139336813-e310117d-5ba5-4a31-ad2b-c3201c37d550.png)
+
 
 
 #### reference

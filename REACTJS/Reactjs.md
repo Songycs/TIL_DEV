@@ -1,6 +1,12 @@
-***ReactJS***
-  - what I learned about Reactjs
-  - Especially 'Important' or 'Hard'
+# ReactJS
+
+***
+
+  react에 대한 기록
+
+  21.11 웹 기초 재정립 - react 시작
+
+***
 ---------------------------------------
 ### `React Hook`
   - 함수형 컴포넌트의 기능/구현방법들을 클래스형 컴포넌트의 구현방법들과 비교하여 공부하고, 
@@ -42,7 +48,12 @@
 - 'useRef':
 - 'customHook':
 
----------------------------------------
-### `ddd`
+***
+
+### `memo`
+
+  - `JSX`: Javacscript XML
+
+***
 ---------------------------------------
 

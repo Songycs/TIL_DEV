@@ -33,7 +33,7 @@
   - OOCSS ( Object Oriented CSS )
     - 구조와 모양 분리
     - CSS를 모듈방식으로 개발하여 중복을 최소화
-    ```Css
+    ```css
       /* Instead of  */
       .box {
           width: 250px;
@@ -66,6 +66,25 @@
 #### 타입
 
   - Inline
+  ```js
+  export default function Hello(){
+    return(
+        <div>
+            <h1
+                style = {{
+                    color:"#f00",
+                    borderRight: "12px solid #000",
+                    marginBottom: "50px",
+                    opacity:1
+                }}
+            
+            >
+                Hello
+            </h1>
+        </div>
+    )
+}
+  ```
   - Embedded
   - External
 

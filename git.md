@@ -94,6 +94,8 @@
    - footer : 선택적, issue tracker(Fixes, Resolves, Ref, Related to) id 작성시 사용 
       - Fixes: #11 Related to: #22, #33 
    - 예시(출처: https://doublesprogramming.tistory.com/256)
+![image](https://user-images.githubusercontent.com/15559593/139594227-99efdd72-dde9-4e95-bb4b-fdd3b676cff9.png)
+
 
 - `branch / naming`
    - master(main) : 제품 출시 가능 브랜치, Release 버전 소스 (배포 이력 관리) / master

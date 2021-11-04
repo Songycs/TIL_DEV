@@ -1,0 +1,37 @@
+{
+    "days" : [
+        {"id": 1, "day":1},
+        {"id": 2, "day":2},
+        {"id": 3, "day":3}
+    ],
+    "words" :[
+        {
+            "id":1,
+            "day":1,
+            "eng":"book",
+            "kor":"책",
+            "isDone": false
+        },
+        {
+            "id":2,
+            "day":1,
+            "eng":"read",
+            "kor":"읽다",
+            "isDone": false
+        },       
+        {
+            "id":3,
+            "day":1,
+            "eng":"computer",
+            "kor":"컴퓨터",
+            "isDone": false
+        },        
+        {
+            "id":4,
+            "day":2,
+            "eng":"this",
+            "kor":"이것",
+            "isDone": false
+        }
+    ]
+}

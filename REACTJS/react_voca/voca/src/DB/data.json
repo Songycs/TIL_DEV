@@ -11,6 +11,16 @@
     {
       "id": 3,
       "day": 3
+    },
+    {
+      "day": 4,
+      "isDone": false,
+      "id": 4
+    },
+    {
+      "day": 5,
+      "isDone": false,
+      "id": 5
     }
   ],
   "words": [
@@ -41,6 +51,20 @@
       "kor": "하이",
       "isDone": false,
       "id": 4
+    },
+    {
+      "day": "1",
+      "eng": "stand",
+      "kor": "일어서다",
+      "isDone": false,
+      "id": 5
+    },
+    {
+      "day": "2",
+      "eng": "add",
+      "kor": "추가",
+      "isDone": false,
+      "id": 6
     }
   ]
 }

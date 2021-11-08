@@ -5,6 +5,9 @@ export default function DayList(){
 
     const days = useFetch("http://localhost:3001/days")    
 
+    if(days.length===0){
+        return <span>loading...</span>
+    }
     return (
         <ul className = "list_day">
             {days.map(day=>(

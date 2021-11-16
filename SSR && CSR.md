@@ -1,8 +1,5 @@
 # SSR && CSR 
 ***
-![image](https://user-images.githubusercontent.com/15559593/137744097-0d1c6b11-d5f1-4618-83ef-11ce93473135.png)
-
-***
 
 About Server Side Rendering , Client Side Rendering
 HTML과 다운받은 JS파일의 로직을 통해 동적으로 DOM을 그리는 과정에 대해 

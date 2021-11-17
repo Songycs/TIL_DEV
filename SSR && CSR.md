@@ -1,8 +1,8 @@
 # SSR && CSR 
 ***
 
-About Server Side Rendering , Client Side Rendering
-HTML과 다운받은 JS파일의 로직을 통해 동적으로 DOM을 그리는 과정에 대해 
+- About Server Side Rendering , Client Side Rendering
+- HTML과 다운받은 JS파일의 로직을 통해 동적으로 DOM을 그리는 과정에 대해 
  
 ***
 

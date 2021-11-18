@@ -21,11 +21,56 @@
 
 * `Code Splitting`
 
-* `Static vs Dynamic`
+* `Static Generation`
+  - Marketing pages, Blog posts, Product listing, Help, Doc ETC
+  - External data가 없으면 자동, 있으면 `getStaticProps` 활용
+  ```js
+  // This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { id: post.id },
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
+}
+  
+  ```
+  - `getStaticPaths`로 경로 페이지 미리 생성( data에 종속 시 )
+  ```js
+  function Blog({ posts }) {
+  // Render posts...
+}
+
+// This function gets called at build time
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+export default Blog
+  
+  ```
 
 * `Prefetching`
 
-* `Dynamic URL`
+* `Dynamic Routes`
+  - pages/posts/[id].js
 
 
 ***

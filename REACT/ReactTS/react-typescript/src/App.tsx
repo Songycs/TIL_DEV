@@ -6,6 +6,13 @@ import { Greet } from './components/Greet';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
 import { Container } from './components/Conatiner';
+import { Box } from './components/context/Box'
+import {ThemeContextProvider} from './components/context/ThemeContext'
+import { UserContextProvider } from './components/context/UserContext';
+import { User } from './components/context/User';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List';
 function App() {
 
   return (
@@ -20,6 +27,30 @@ function App() {
       }}/>
       <Input value="" handleChange={(event)=>console.log(event)} />
       <Container styles={{border:'1px solid black',padding:'1rem'}}/>
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <User/>
+      </UserContextProvider>
+      <Private isLoggedIn={true} Component={Profile}/>
+      <List
+        items={[
+          {
+            id:1,
+            first:"computer"
+          },
+          {
+            id:2,
+            first:"mouse"
+          },
+          {
+            id:3,
+            first:"keyboard"
+          },
+        ]}
+        onClick={(item)=>console.log(item)}
+      />
     </div>
   );
 }

@@ -5,7 +5,7 @@
 - REACT 프레임워크 ( SSR, SEO )
 - 초기화면은 SSR, 이후 라우팅은 CSR
 - [Project Animate](https://github.com/Songycs/Animate)
- 
+
 ***
 
 #### CONCEPT
@@ -26,7 +26,7 @@
   - External data가 없으면 자동, 있으면 `getStaticProps` 활용
   ```js
   // This function gets called at build time
-export async function getStaticPaths() {
+  export async function getStaticPaths() {
   // Call an external API endpoint to get posts
   const res = await fetch('https://.../posts')
   const posts = await res.json()
@@ -39,17 +39,17 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false }
-}
-  
+  }
+
   ```
   - `getStaticPaths`로 경로 페이지 미리 생성( data에 종속 시 )
   ```js
   function Blog({ posts }) {
   // Render posts...
-}
+  }
 
-// This function gets called at build time
-export async function getStaticProps() {
+  // This function gets called at build time
+  export async function getStaticProps() {
   // Call an external API endpoint to get posts
   const res = await fetch('https://.../posts')
   const posts = await res.json()
@@ -60,11 +60,11 @@ export async function getStaticProps() {
     props: {
       posts,
     },
+    }
   }
-}
 
-export default Blog
-  
+  export default Blog
+
   ```
 
 * `Prefetching`
@@ -86,7 +86,7 @@ export default Blog
   - 모든 컨텐츠 구성 , `_documents.tsx` 실행하여 html출력
 
 ***
-  
+
 #### CONSTRUCTURE & DIRECTORY
 
   - `_app.tsx`
@@ -101,7 +101,7 @@ export default Blog
   - `_document.tsx`
     - meta태그 정의 , 전체 페이지 관리 컴포넌트
     - 로그를 찍으면 서버에만 보임
-    - static한 것만 ! 
+    - static한 것만 !
     - 페이지 구성요소만 반영되고 , js는 반영되지 않음
 
 ***

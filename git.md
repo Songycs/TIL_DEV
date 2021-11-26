@@ -14,6 +14,10 @@
    - git commit -m “<메시지>” --amend ( 마지막 commit 고치기 )
    - git commit -C HEAD --amend ( 마지막 commit 고치기 및 메세지 재활용 )
    - git reset HEAD <파일> [<파일>]( 마지막커밋취소 )
+     -  git reset HEAD^ : 마지막 커밋 취소 but, 변경한 파일은 그대로 존재
+     -  git reset --hard HEAD^ : 마지막 커밋 취소하고 변경전 파일로 복구
+     -  git reset HEAD~n : 마지막 n개 커밋 취소 but, 변경한 파일은 그대로 존재
+     -  git reset --hard HEAD~n : 마지막 n개 커밋 취소하고 변경전 파일로 복구
    - git status (파일 상태 확인)
 
 - `branch`
@@ -91,17 +95,17 @@
    - fix, feat, docs, style, refactor, test, chore
    - subject : 50자 이내, 대문자 작성, 마침표 없이, 과거시제 x
    - body : 선택적, 부연설명 필요 시 , 72자 이내, 제목과 구분
-   - footer : 선택적, issue tracker(Fixes, Resolves, Ref, Related to) id 작성시 사용 
-      - Fixes: #11 Related to: #22, #33 
+   - footer : 선택적, issue tracker(Fixes, Resolves, Ref, Related to) id 작성시 사용
+      - Fixes: #11 Related to: #22, #33
    - 예시(출처: https://doublesprogramming.tistory.com/256)
 ![image](https://user-images.githubusercontent.com/15559593/139594227-99efdd72-dde9-4e95-bb4b-fdd3b676cff9.png)
 
 
 - `branch / naming`
    - master(main) : 제품 출시 가능 브랜치, Release 버전 소스 (배포 이력 관리) / master
-   - develop : 다음 출시 버전 개발 브랜치, 개발 버전 소스 / develop 
+   - develop : 다음 출시 버전 개발 브랜치, 개발 버전 소스 / develop
    - feature : 기능을 개발하는 branch, develop에서 분기,  개발 완료시 develop와 병합 / feature - issue_number
-   - release : 이번 출시 버전을 준비하는 브랜치 / release - version_number 
+   - release : 이번 출시 버전을 준비하는 브랜치 / release - version_number
    - hotfix : 출시 버전에서 발생한 버그 수정 하는 브랜치 ( master branch 오류 수정 ) / hotfix - issue_number
       - feature -> develop -> master가 아닌 급한 master의 수정시 활용, master로 병합
 

@@ -15,7 +15,7 @@ JS, JSX 정적 분석 도구(오픈소스프로젝트)
 
 ## `plugins & rules`
 
-## `Example`
+## `내 프로젝트 예시(animate)`
   ```JS
   {
     "env": {

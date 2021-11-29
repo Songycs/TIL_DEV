@@ -16,6 +16,7 @@
     - ![image](https://miro.medium.com/max/1050/1*jJkEQpgZ8waQ5P-W5lhxuQ.png)
 
 * `getInitialProps()`
+    - use getStaticProps, getServerSideProps after Next.js 9.3 or newer
 
 * `Automatic Routing`
 

@@ -4,7 +4,6 @@
 
 ***
 ### Shortcut
-***
   - 작업 장소 이동 (alt + <>)
   - 검색창 열기 (ctrl + shift + f)
   - 문서(에디터) 닫기 (ctrl + f4, ctrl+w)
@@ -24,9 +23,9 @@
   - 문자열 n개 수정(ctrl + d)
   - 다음 오류로 이동 (f8)
   - 파일 찾기 (ctrl + p)
+
 ***
 ### Extensions
-***
   - Auto close Tag
   - Auto Import
   - Auto Rename Tag
@@ -39,5 +38,7 @@
   - npm
   - prettier
   - css peek
+
+***
 ### reference
 - [vscode docs](https://code.visualstudio.com/docs)

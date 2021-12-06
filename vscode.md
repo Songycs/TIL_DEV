@@ -3,6 +3,19 @@
  VSCODE 사용하는 단축키 , 사용하는 extension 정리
 
 ***
+### Feature
+Bold는 시간내서 꼭 따로 공부하고 써보기
+
+  - Peek(alt+f12) - 함수, css, html, 컴포넌트 등등 열어보기
+  - **Refactoring(ctrl+shift+r)** - 파일 빼기, 함수 빼기, 변수화하기
+  - Renaming symbol(f2) - 함수명 변경 등
+  - **Snippets** - 파일 템플릿이나, 자주쓰는 구문 알파벳 입력 등과 같은 방법으로 빠르게 작성가능 ( react snippets 등 )
+  - Debugger - Breakpoint로 간단히 디버깅 가능, 필요할 때 추가로 디버깅 방법론 공부하기
+  - Multi cursor
+  - **Emmet** - div.container>p.title*5 + tab, dn(display none) + tab
+  - **shortcuts** - vim처럼 키보드로 마우스 대체
+  -
+
 ### Shortcut
   - 작업 장소 이동 (alt + <>)
   - 검색창 열기 (ctrl + shift + f)

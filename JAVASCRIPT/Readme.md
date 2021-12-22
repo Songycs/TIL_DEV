@@ -1,8 +1,8 @@
 # Javascript
 ***
 
-21.10 웹 기초 재정립 Javascript , 공부할 때마다 채워넣기  
-  
+21.10 웹 기초 재정립 Javascript , 공부할 때마다 채워넣기
+
 몰랐거나 중요한 개념 기록, 기타 내용 정리
 
 21.10.23 ~
@@ -10,10 +10,10 @@
 ***
 
 #### Concept
-  
+
   - Call stack (How js function works)
 
-  - primitive types 
+  - primitive types
     - no object, no method
     - string, number, bigint, boolean, undefined, symbol, null
 
@@ -30,7 +30,7 @@
       // "=="이 boolean을 만나면 숫자로 변환
       console.log("1"==1) => true
       console.log("1"===1) => false
-      // null, undefined, NAN -> false 
+      // null, undefined, NAN -> false
     ```
   - scope (Function, Block, Lexical, Global)
     - Access variables
@@ -41,16 +41,16 @@
     - All declaration moves to top ( hoisting )
     ```JAVASCRIPT
       // No hoisting(as expression)
-      const add = (a,b) => a+b;    
+      const add = (a,b) => a+b;
     ```
   - Message Queue, event loop
-    - blocking, non blocking 
+    - blocking, non blocking
     - Message from web api(browser)
     - js get things from queue if stack is empty
 
   - IIFE, Modules, Namespaces
     - webpack, gulp ( Browser cannot understand import, export )
-  
+
   - Engines
   - Promises
   ```js
@@ -85,7 +85,7 @@
         console.log("끝");
       })
     })
-  })      
+  })
   ```
   ```js
   //Promise Chaining
@@ -138,7 +138,7 @@
     //이 경우 1초 걸림(f1)
     console.log(res);
   })
-  
+
   ```
 
   - Async/await
@@ -207,7 +207,7 @@
     }
     drive(){
       console.log('drive');
-    } 
+    }
   }
 
   class Bmw extends Car{
@@ -245,9 +245,9 @@
   //Apply, call 함수 매개변수를 처리하는 방식의 차이(배열)
 
   update.apply('song',[1993,'developer']) //{name:'song',birth:'1993',occu:'developer'}
-  
+
   ```
-  
+
   ```js
   //Bind
   const user = {
@@ -263,7 +263,7 @@
   fn.apply(user); // hello, Song
 
   let boundFn = fn.bind(user);
-  boundFn(); // hello, Song 
+  boundFn(); // hello, Song
   ```
 
   - `__proto__`
@@ -281,7 +281,7 @@
   }
 
   bmw.__proto__ = car;
-  
+
   //prototype chain , 찾는게 있는곳까지 올라감
   const x5 = {
     color:"white",
@@ -291,7 +291,7 @@
   console.log(x5.navigation) // 1 x5->bmw
   for(x in x5){
     console.log(x)//color, name, navigtion, wheel, drive -> 전부나옴
-    //object, keys, values에는 있는거만 
+    //object, keys, values에는 있는거만
   }
 
   for(x in x5){
@@ -302,38 +302,38 @@
       console.log('x',x);
     }
   }
- // 'o color', 'o name', 'x navigation', 'x wheels', 'x drive' 
+  // 'o color', 'o name', 'x navigation', 'x wheels', 'x drive'
   ```
   ```js
   //proto 활용시, 간편함을 위한 생성자 함수 예시
 
-  const Bmw = function(color){
-    this.color = color;
-  }
-  Bmw.prototype.wheels = 4;
-  Bmw.prototype.drive = function (){
-    console.log("drive");
-  };
+    const Bmw = function(color){
+      this.color = color;
+    }
+    Bmw.prototype.wheels = 4;
+    Bmw.prototype.drive = function (){
+      console.log("drive");
+    };
 
-  const x5 = new Bmw('red');
-  const z4 = new Bmw('blue');
+    const x5 = new Bmw('red');
+    const z4 = new Bmw('blue');
 
-  //x5.__proto__=car;
-  //z4.__proto__=car; 대신에 위의 생성자 함수 활용
-  
-  /*
-  Mbw.prototype = {
-    constructor: Bmw,
-    wheels: 4,
-    drive(){
-      console.log('drive');
-    },
-    navigation: 1,
-    stop(){
-      console.log('stop');
-    },
-  };
-  */
+    //x5.__proto__=car;
+    //z4.__proto__=car; 대신에 위의 생성자 함수 활용
+
+    /*
+    Mbw.prototype = {
+      constructor: Bmw,
+      wheels: 4,
+      drive(){
+        console.log('drive');
+      },
+      navigation: 1,
+      stop(){
+        console.log('stop');
+      },
+    };
+    */
   ```
 
   - `Rest parameters`
@@ -369,7 +369,7 @@
   let arr2 = [4,5,6];
 
   arr1 = [...arr2, ...arr1]; //456123
-  
+
   let user = {name:'song'};
   let info = {age:29};
   let front = ['JS','REACT']
@@ -389,7 +389,7 @@
     - closure : 함수와 lexical environment의 조합, 함수가 생성될 당시의 외부 변수 기억
     - 캡슐화, 은닉화
     - 예시 작성 후 첨부
-     
+
 
   - `hoisting` : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것으로 처리
 
@@ -400,8 +400,8 @@
   - `var`
     - no var anymore (ES6)
     - var는 `hoisting`됨
-  
-  - `scope` 
+
+  - `scope`
     - let, const는 block-scoped(for, if try catch etc)
 
   - `생성자 함수`
@@ -421,9 +421,9 @@
   const user{
     [n] = "Song"
   }
-  
+
   ```
-  
+
   - **`Object`**
     ```JAVASCRIPT
       const user = {
@@ -436,7 +436,7 @@
     - Object.assign() (객체 복제, 병합 등)
     ```js
       Object.assign({gender:'male'},user); // gender만 있는 객체에 user병합
-    
+
     ```
     - keys() , values() , entries() , fromEntries()
 
@@ -444,7 +444,7 @@
     - symbol은 유일성 보장 (== or === false)
     - 설명을 덧 붙일 수 있음
     ```js
-      const id = Symbol('id'); 
+      const id = Symbol('id');
     ```
     - Symbol.for() -> 하나의 심볼 보장 없으면 만들고, 있으면 가져옴
     ```JAVASCRIPT
@@ -454,7 +454,7 @@
     ```
     - 활용법 다시 공부하기
     ```JAVASCRIPT
-      //기존의 객체에 내 property 추가 
+      //기존의 객체에 내 property 추가
       //타 개발자
       const user = {
         name : "Song",
@@ -494,7 +494,7 @@
       return item%2 === 0;
     })
     console.log(result); //2
-    
+
     let userList = {
       {name: "song", age:30};
       {name: "park", age:29};
@@ -540,7 +540,7 @@
       //prev는 누적값, 0은 초기값 optional
       return prev+cure;
     },0)
-    
+
     ```
 
   - `SetInterval, ClearInterval`
@@ -553,12 +553,12 @@
     }
   }
   const tId = setInterval(showTime,1000);
-  
+
   ```
 ***
 #### Memo & Keyword
-  
-  - [Lodash](https://lodash.com/) 
+
+  - [Lodash](https://lodash.com/)
   - undefined 와 null에 대한 이해
   - const, let ( var )
   - **destructuring assignmnet (array, object)**
@@ -571,6 +571,6 @@
 
 #### Reference
 
-- [노마드코더 유튜브](https://www.youtube.com/watch?v=dIIQmSsg0SI) 
+- [노마드코더 유튜브](https://www.youtube.com/watch?v=dIIQmSsg0SI)
 - [MDN-JS](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 - [코딩앙마](https://www.youtube.com/watch?v=4_WLS9Lj6n4&t=4541s)

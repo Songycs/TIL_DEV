@@ -12,9 +12,11 @@
 
 * `SSR ( Server side Rendering )`
 
-    - [SSR && CSR](https://github.com/Songycs/TIL_DEV/blob/master/SSR%20%26%26%20CSR.md)
-    - ![image](https://miro.medium.com/max/1050/1*jJkEQpgZ8waQ5P-W5lhxuQ.png)
-
+  - [SSR && CSR](https://github.com/Songycs/TIL_DEV/blob/master/SSR%20%26%26%20CSR.md)
+  ![image](https://miro.medium.com/max/1050/1*jJkEQpgZ8waQ5P-W5lhxuQ.png)
+  - **getServerSideProps**
+    - called at request time
+    - pre-render 필요없으면 CSR -> `SWR` -> React hook, CSR에 활용
 * `getInitialProps()`
     - use getStaticProps, getServerSideProps after Next.js 9.3 or newer
 
@@ -23,51 +25,13 @@
 * `Code Splitting`
 
 * `Static Generation`
-  - Marketing pages, Blog posts, Product listing, Help, Doc ETC
-  - External data가 없으면 자동, 있으면 `getStaticProps` 활용
-  ```js
-  // This function gets called at build time
-  export async function getStaticPaths() {
-  // Call an external API endpoint to get posts
-  const res = await fetch('https://.../posts')
-  const posts = await res.json()
-
-  // Get the paths we want to pre-render based on posts
-  const paths = posts.map((post) => ({
-    params: { id: post.id },
-  }))
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
-  }
-
-  ```
+  - **서버측**에서 실행됨, 브라우저용 js 번들에도 포함되지않아, 브라우저로 보내지않고 쿼리 등 작성가능
+  - External data가 없으면 자동, 있으면 `getStaticProps` 활용 (->데이터 유무 상관없음)
+  - 빌드시에 자동으로 정적으로 생성됨
+  - [데이터 함수처리](https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops)
   - `getStaticPaths`로 경로 페이지 미리 생성( data에 종속 시 )
-  ```js
-  function Blog({ posts }) {
-  // Render posts...
-  }
-
-  // This function gets called at build time
-  export async function getStaticProps() {
-  // Call an external API endpoint to get posts
-  const res = await fetch('https://.../posts')
-  const posts = await res.json()
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      posts,
-    },
-    }
-  }
-
-  export default Blog
-
-  ```
-
+  - `development` vs `production` (별도 파일에서 자세히)
+  - 페이지에서만 가능하다, react가 페이지 렌더링전에 필요 데이터를 다 갖고있어야하니까
 * `Prefetching`
 
 * `Dynamic Routes`
@@ -110,7 +74,7 @@
 #### Related
 
   - Hot Module Replacement
-
+  - polyfill
 ***
 
 #### REFERENCE
